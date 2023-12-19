@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// create new component
+function Apple(){
+  return(
+    <h2> this is from APPLE component </h2>
+  );
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Apple/>
   </React.StrictMode>
 );
 
