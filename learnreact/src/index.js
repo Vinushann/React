@@ -4,12 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// create new component
-function Apple(){
-  return(
-    <h2> this is from APPLE component </h2>
-  );
-}
+// import the apple componenet
+import Apple from './Componenet/apple';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
