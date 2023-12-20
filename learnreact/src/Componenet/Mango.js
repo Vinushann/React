@@ -1,11 +1,17 @@
+
 function Mango(props) {
-  const {color} = props;
+
+  // DESTRUCTURING METHOD
+  const {color, country} = props;
 
   return (
     <>
       <h1> from mango component </h1>
       <p>
+        {/* using those variables */}
         the color is {color}
+        <br />
+        from {country}
       </p>
     </>
   );
