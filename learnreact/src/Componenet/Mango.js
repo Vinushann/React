@@ -1,8 +1,10 @@
 
 function Mango(props) {
 
-  // DESTRUCTURING METHOD
-  const {color, country} = props;
+  // DESTRUCTURING METHOD - take the OBJECT out
+  const {obj} = props;
+
+  const {country, color} = obj;
 
   return (
     <>

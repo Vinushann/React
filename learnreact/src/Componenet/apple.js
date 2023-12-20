@@ -1,17 +1,19 @@
 import Mango from './Mango';
 
 function Apple(){
-  // variable for send for PROPS
-  const country = 'Canada';
-  const color = 'red';
-  const text = `From apple ${color}`
+  // using object to share the data through the PROPS
+  const obj = {country : 'America', color : 'red'};
+ 
+  const text = `From apple`
 
   return(
     <> 
+
     <h1>{text}</h1>
 
-    {/* sending the data  */} {/* sending the data without variables*/}
-     <Mango color = {color} country = {'Canada'}/>
+    {/* send the data through the OBJECT */}
+     <Mango obj = {obj}/>
+
     </>
   );
 }
