@@ -5,14 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // import the apple componenet
-import Apple from './Componenet/apple';
-
-
+import Fruit from './Componenet/apple';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Apple/>
+    <Fruit/>
   </React.StrictMode>
 );
 

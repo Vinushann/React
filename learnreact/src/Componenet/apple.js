@@ -1,14 +1,18 @@
 import Mango from './Mango';
 import Avacado from './Avacado';
 
-function Apple(){
+function Fruit(){
   // using object to share the data through the PROPS
   const obj = {country : 'America', color : 'red'};
 
-  // this object for class AVACADO
-  const obj1 = {country : 'Canada', color : 'yellow'};
- 
-  const text = `from Apple`
+  // main object
+  const mainObj = {country : 'Canada', color : 'green'};
+  // country : 'Canada', color : 'green'
+
+  // object one
+  const obj1 = mainObj;
+
+  const text = `from Fruit`;
 
   return(
     <> 
@@ -19,7 +23,11 @@ function Apple(){
      <Mango obj = {obj}/>
      
      {/* send the object to Avacado class */}
-     <Avacado obj = {obj1}/>
+     {/* conditional rendering */}
+     {/* in here, if those are null it will not execute the true part */}
+     
+     { (obj1.color !== undefined && obj1.country !== undefined) ? <Avacado obj = {obj1}/> : null }
+     
     </>
   );
 }
@@ -27,4 +35,4 @@ function Apple(){
 
 
 // import the component
-export default Apple
+export default Fruit;
