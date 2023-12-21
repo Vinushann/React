@@ -8,13 +8,14 @@ function Mango(props) {
 
   return (
     <>
-      <h1> from mango component </h1>
+      <h1> from Mango component </h1>
       <p>
         {/* using those variables */}
         the color is {color}
         <br />
         from {country}
       </p>
+      <hr />
     </>
   );
 }
