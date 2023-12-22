@@ -14,6 +14,9 @@ function Fruit() {
     { country: "Australia", color: "pink" },
   ];
 
+  const num = [1,2,3,4,5,6];
+
+
   const text = `from Fruit`;
 
   return (
@@ -27,9 +30,17 @@ function Fruit() {
     {/* in here, we used the map() to get each object and pass it throgh the PROPS */}
       {list.map((n) => (
 
-        // Call every time over and over again.
-        <Avocado obj={n} />
+        // here, we are using key each list to distinguish between others
+        // key as objects' country
+       <li key={n.country}> <Avocado obj={n} /> </li>
       ))}
+
+      {/* print the data directly without send to any component */}
+       {num.map((n) => (
+        <p key={n}>{n}</p>
+      ))} 
+
+
     </>
   );
 }
