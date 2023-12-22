@@ -2,7 +2,7 @@
 import{ Component } from 'react';
 
 // class creation
-class Avacado extends Component {
+class Avocado extends Component {
 
   render(){
 
@@ -25,4 +25,4 @@ class Avacado extends Component {
   }
 }
 
-export default Avacado;
+export default Avocado;

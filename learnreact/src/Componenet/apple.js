@@ -1,38 +1,38 @@
-import Mango from './Mango';
-import Avacado from './Avacado';
+import Mango from "./Mango";
+import Avocado from "./Avacado";
 
-function Fruit(){
+function Fruit() {
   // using object to share the data through the PROPS
-  const obj = {country : 'America', color : 'red'};
+  const obj = { country: "America", color: "red" };
+  const obj1 = { country: "Canada", color: "green" };
 
-  // main object
-  const mainObj = {country : 'Canada', color : 'green'};
-  // country : 'Canada', color : 'green'
-
-  // object one
-  const obj1 = mainObj;
+  // Array with objects
+  const list = [
+    { country: "Canada", color: "magenta" },
+    { country: "Japan", color: "white" },
+    { country: "Paris", color: "black" },
+    { country: "Australia", color: "pink" },
+  ];
 
   const text = `from Fruit`;
 
-  return(
-    <> 
+  return (
+    <>
+      <h1>{text}</h1>
+      <hr />
 
-    <h1>{text}</h1>
-    <hr />
-    {/* send the data through the OBJECT */}
-     <Mango obj = {obj}/>
-     
-     {/* send the object to Avacado class */}
-     {/* conditional rendering */}
-     {/* in here, if those are null it will not execute the true part */}
-     
-     { (obj1.color !== undefined && obj1.country !== undefined) ? <Avacado obj = {obj1}/> : null }
-     
+      {/* send the data through the OBJECT */}
+      <Mango obj={obj} />
+
+    {/* in here, we used the map() to get each object and pass it throgh the PROPS */}
+      {list.map((n) => (
+
+        // Call every time over and over again.
+        <Avocado obj={n} />
+      ))}
     </>
   );
 }
-
-
 
 // import the component
 export default Fruit;
