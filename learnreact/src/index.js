@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// import the apple componenet
-import Fruit from './Componenet/apple';
+// import the color
+import Color from './Componenet/Color'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Fruit/>
+    <Color/>
   </React.StrictMode>
 );
 
