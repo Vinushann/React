@@ -3,8 +3,10 @@ import {useState} from 'react'
 import CarClass from './CarClass'
 function Color() {
   
-  // set the initial value
+  // create multiple states
   const [color, setColor] = useState('Red');
+  const [country, setCountry] = useState('Canada');
+  const [route, setRoute] = useState('67, hill road.');
 
   // set the color to Green
   const increment = () => {
@@ -18,10 +20,12 @@ function Color() {
 
   return (
     <>
-      <h1> From Color Component {color} </h1>
-      {/* button for TRIGGER */}
-      <button onClick={increment} style = {{marginRight : '100px'}}> Change color to Green </button>
-      <button onClick={Blue}> Change color to Blue </button>
+      <h1> From Color Component </h1>
+      <p>color is : {color}</p>
+      <p>country is : {country}</p>
+      <p>route is : {route}</p>
+      
+      
       <CarClass/>
     </>
   );

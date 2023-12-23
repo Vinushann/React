@@ -15,7 +15,7 @@ class CarClass extends Component {
     return (
       <div>
 
-        <h1> From CarClass : { this.state.color } </h1>
+        <h1> From CarClass : { this.state.color} </h1>
 
         {/* button for TRIGGER */}
         <button
