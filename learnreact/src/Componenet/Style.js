@@ -1,3 +1,7 @@
+// import the css file into this JS
+// that is it we do not need do anything after that.
+import './style.css';
+
 function Style(){
  
   // declare the styles
@@ -10,10 +14,10 @@ function Style(){
     <>
 
     {/* this is one way of add inline css */}
-    <h2 style={{color: "red", backgroundColor : "white"}} > from style component</h2>
+    <h2> from style component</h2>
 
     {/*  other way is : */}
-    <h2 style = {style1} > this is another tag </h2>
+    <h2> this is another tag </h2>
     <hr />
     </>
   );
