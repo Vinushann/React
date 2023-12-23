@@ -1,6 +1,7 @@
-// import the css file into this JS
-// that is it we do not need do anything after that.
-import './style.css';
+// import the style.module.css
+// in this style thing contain all the data from that specific css
+import styles from './header.module.css';
+
 
 function Style(){
  
@@ -12,12 +13,10 @@ function Style(){
  
   return(
     <>
+    <h2 className = {styles.classOne}> from style component</h2>
 
-    {/* this is one way of add inline css */}
-    <h2> from style component</h2>
-
-    {/*  other way is : */}
-    <h2> this is another tag </h2>
+  {/* use the className we can apply the all css */}
+    <h2 className = {styles.one}> this is another tag </h2>
     <hr />
     </>
   );
