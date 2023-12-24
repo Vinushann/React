@@ -1,34 +1,41 @@
-// import the function
-import {useState} from 'react'
-import CarClass from './CarClass'
-function Color() {
-  
-  // create multiple things via OBJECT
-  // obj = is contain all the data of that created object
-  // setObject = is for change the values and get the previous values.
-const [obj, setObject] = useState({
-  color : 'Red',
-  country : 'Canada',
-  route : 'No45, Canada'
-})
+import { useState } from "react";
 
+function List() {
+  const [list, setList] = useState([]);
+  // this state for update the number
+  const [num, setNum] = useState(1);
 
-// change the data for that OBJECT
-function change(){
-  setObject(prevousState => {
-    return {...prevousState, color : 'Pink', country: 'Germany'}
-  })
-}
+  // function for change the value
+  function addItem() {
+
+    // dynamically change the value whenever user clicks button
+    const itemName = "Item" + num;
+
+    // set the list whenever user clicks button
+    setList((previousState) => {
+
+      // return old values with new values
+      return [...previousState, itemName];
+    });
+
+    // after that we have to increase the number then only next number will be increased.
+    setNum((previousState) => {
+      return(previousState + 1);
+    });
+  }
+
   return (
     <>
-      <h1> From Color Component </h1>
-      <p>color is : {obj.color}</p>
-      <p>country is : {obj.country}</p>
-      <p>route is : {obj.route}</p>
-      <button onClick={change} >change the color</button>
-      <CarClass/>
+      <h1> use array in state </h1>
+      <ul>
+        {list.map((list, index) => (
+          <li key={index}> {list} </li>
+        ))}
+      </ul>
+      {/* call addItem function */}
+      <button onClick={addItem}> add item </button>
     </>
   );
 }
 
-export default Color;
+export default List;
