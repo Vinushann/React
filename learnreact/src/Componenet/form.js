@@ -6,19 +6,24 @@ function Myform() {
   const [inputs, setInputs] = useState({});
   
 
-  // function for do after user submit the form.
   function submit(e){
-    // preventDefault() will prevent from browser refresh the screen itself. why we have to prevent? *** otherwise we can not see the outut on the console.
     e.preventDefault();
-
-    // print the user entered values
-    // details(name, age, address) are coming from the above
-    // const print = 'form submitted' + '\n' + inputs;
-    // inputs.name + '\n' + inputs.age + '\n' + inputs.address;
-    // print
     console.log(inputs);
-
   }
+
+
+  function storeAllData(e){
+
+    // get the name from the form
+    const name = e.target.name;
+
+    // get the vale from that name
+    const value = e.target.value;
+
+    setInputs( (previousState) => {
+      return {...previousState, [name] : value}
+    })
+    
 
   return (
     <>
@@ -26,27 +31,19 @@ function Myform() {
       
       {/* get the name from form */}
       <label htmlFor=""> Name : <br/>
-        <input type="text" onChange={(e) => {
-           
-            // we 
-            setInputs( (previousState) => { return { ...previousState, name : e.target.value } });
-          }}/>
+        <input type="text" name="name" onChange={storeAllData}/>
       </label>
 
       <br />
 
         <label htmlFor=""> Age : <br/>
-        <input type="text" onChange={(e) => {
-            setInputs( (previousState) => { return { ...previousState,  age : e.target.value } } );
-          }}/>
+        <input type="text" name="age" onChange={storeAllData}/>
       </label>
 
       <br />
 
         <label htmlFor=""> Address : <br/>
-        <input type="text" onChange={(e) => {
-           setInputs( (previousState) => { return { ...previousState, address : e.target.value } });
-          }}/>
+        <input type="text"  name="address" onChange={storeAllData}/>
       </label>
 
       <br /> <br />
@@ -55,14 +52,6 @@ function Myform() {
     </>
   );
 }
-
+}
 export default Myform;
 
-/*
-special funcitons 
-
-1. onChange() - whenver user typed anything as input it will listen
-
-2. setName(e.target.value)  - how we can access the user entered value.
-
-*/
