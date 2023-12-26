@@ -1,11 +1,10 @@
-// A15 - FORM
+// A16 - handle FORM  via object
 import { useState } from "react";
 
 function Myform() {
-  // useSate for store the variable from form
-  const [name, setName] = useState("");
-  const [age, setAge] = useState();
-  const [address, setAddress] = useState();
+  // as OBJECT
+  const [inputs, setInputs] = useState({});
+  
 
   // function for do after user submit the form.
   function submit(e){
@@ -14,23 +13,23 @@ function Myform() {
 
     // print the user entered values
     // details(name, age, address) are coming from the above
-    const print = 'form submitted' + '\n' + name + '\n' + age + '\n' + address;
-
+    // const print = 'form submitted' + '\n' + inputs;
+    // inputs.name + '\n' + inputs.age + '\n' + inputs.address;
     // print
-    console.log(print);
+    console.log(inputs);
 
   }
 
   return (
     <>
     <form action="" onSubmit={submit}>
+      
       {/* get the name from form */}
       <label htmlFor=""> Name : <br/>
         <input type="text" onChange={(e) => {
            
-            // e is contain user input and we set inside the 'name' variable through invoke the setName()
-            // accessing the value that user entered!
-            setName(e.target.value);
+            // we 
+            setInputs( (previousState) => { return { ...previousState, name : e.target.value } });
           }}/>
       </label>
 
@@ -38,7 +37,7 @@ function Myform() {
 
         <label htmlFor=""> Age : <br/>
         <input type="text" onChange={(e) => {
-            setAge(e.target.value);
+            setInputs( (previousState) => { return { ...previousState,  age : e.target.value } } );
           }}/>
       </label>
 
@@ -46,7 +45,7 @@ function Myform() {
 
         <label htmlFor=""> Address : <br/>
         <input type="text" onChange={(e) => {
-            setAddress(e.target.value);
+           setInputs( (previousState) => { return { ...previousState, address : e.target.value } });
           }}/>
       </label>
 
